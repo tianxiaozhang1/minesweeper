@@ -584,7 +584,7 @@ while True:
         bigred_number(int(time_elapsed), 10, 1626)
 
         #Time's up
-        if time_elapsed > 998:
+        if time_elapsed > 999:
             game_failed = True
             game_on = False
 
