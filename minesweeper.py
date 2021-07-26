@@ -3,63 +3,63 @@ import pygame, sys, random
 def smiley_hover():
     #Smiley icon
 
-    if 832 <= pygame.mouse.get_pos()[0] <= 920 and 10 <= pygame.mouse.get_pos()[1] <= 98:
-        pygame.draw.rect(screen, GREY, pygame.Rect(832, 10, 88, 88)) 
-        pygame.draw.rect(screen, BOARD, pygame.Rect(838, 16, 88, 88)) 
+    if 842 <= pygame.mouse.get_pos()[0] <= 930 and 10 <= pygame.mouse.get_pos()[1] <= 98:
+        pygame.draw.rect(screen, GREY, pygame.Rect(842, 10, 88, 88)) 
+        pygame.draw.rect(screen, BOARD, pygame.Rect(848, 16, 88, 88)) 
     else:
-        pygame.draw.rect(screen, BOARD, pygame.Rect(832, 10, 88, 88)) 
-        pygame.draw.rect(screen, GREY, pygame.Rect(838, 16, 88, 88)) 
+        pygame.draw.rect(screen, BOARD, pygame.Rect(842, 10, 88, 88)) 
+        pygame.draw.rect(screen, GREY, pygame.Rect(848, 16, 88, 88)) 
 
     if game_won == False and game_failed == False:
-        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(838, 16, 82, 82)) 
-        pygame.draw.rect(screen, YELLOW, pygame.Rect(854, 32, 50, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 24, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 82, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(846, 32, 8, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(904, 32, 8, 50)) 
+        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(848, 16, 82, 82)) 
+        pygame.draw.rect(screen, YELLOW, pygame.Rect(864, 32, 50, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 24, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 82, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(856, 32, 8, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(914, 32, 8, 50)) 
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(867, 42, 8, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(883, 42, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(877, 42, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(893, 42, 8, 8)) 
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(867, 66, 24, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(859, 58, 8, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(891, 58, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(877, 66, 24, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(869, 58, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(901, 58, 8, 8)) 
     elif game_won == True:
-        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(838, 16, 82, 82)) 
-        pygame.draw.rect(screen, YELLOW, pygame.Rect(854, 32, 50, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 24, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 82, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(846, 32, 8, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(904, 32, 8, 50)) 
+        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(848, 16, 82, 82)) 
+        pygame.draw.rect(screen, YELLOW, pygame.Rect(864, 32, 50, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 24, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 82, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(856, 32, 8, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(914, 32, 8, 50)) 
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(859, 40, 16, 12)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(883, 40, 16, 12)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 44, 50, 4)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(869, 40, 16, 12)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(893, 40, 16, 12)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 44, 50, 4)) 
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(867, 66, 24, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(859, 58, 8, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(891, 58, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(877, 66, 24, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(869, 58, 8, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(901, 58, 8, 8)) 
     elif game_failed == True:
-        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(838, 16, 82, 82)) 
-        pygame.draw.rect(screen, YELLOW, pygame.Rect(854, 32, 50, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 24, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(854, 82, 50, 8)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(846, 32, 8, 50)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(904, 32, 8, 50)) 
+        pygame.draw.rect(screen, BACKGROUND, pygame.Rect(848, 16, 82, 82)) 
+        pygame.draw.rect(screen, YELLOW, pygame.Rect(864, 32, 50, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 24, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(864, 82, 50, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(856, 32, 8, 50)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(914, 32, 8, 50)) 
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(869, 46, 4, 4)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(873, 50, 4, 4)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(865, 42, 4, 4))
-        pygame.draw.rect(screen, BLACK, pygame.Rect(865, 50, 4, 4))
-        pygame.draw.rect(screen, BLACK, pygame.Rect(873, 42, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(879, 46, 4, 4)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(883, 50, 4, 4)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(875, 42, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(875, 50, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(883, 42, 4, 4))
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(885, 46, 4, 4)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(889, 50, 4, 4)) 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(881, 42, 4, 4))
-        pygame.draw.rect(screen, BLACK, pygame.Rect(881, 50, 4, 4))
-        pygame.draw.rect(screen, BLACK, pygame.Rect(889, 42, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(895, 46, 4, 4)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(899, 50, 4, 4)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(891, 42, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(891, 50, 4, 4))
+        pygame.draw.rect(screen, BLACK, pygame.Rect(899, 42, 4, 4))
 
-        pygame.draw.rect(screen, BLACK, pygame.Rect(867, 66, 24, 8)) 
+        pygame.draw.rect(screen, BLACK, pygame.Rect(877, 66, 24, 8)) 
 
 def bigred_number(num, top, left):
     #Display the two red clocks on top
@@ -83,12 +83,11 @@ def bigred_number(num, top, left):
 
 def draw_new_board():
     #Start over
-
     for i in range(0, 480):
         row_i = i//30
         column_i = i%30
         pygame.draw.rect(screen, (152, 152, 146), pygame.Rect(20+column_i*58, 124+row_i*58, 56, 56)) #(162, 162, 152)
-        pygame.draw.rect(screen, (192, 192, 182), pygame.Rect(20+column_i*58, 124+row_i*58, 54, 54))
+        pygame.draw.rect(screen, COVEREDSQCOLOUR, pygame.Rect(20+column_i*58, 124+row_i*58, 54, 54))
 
 def new_board(mines): 
     mines = []
@@ -206,7 +205,7 @@ def drawing_number(number, sqx, sqy):
 
     if number == "F":
         pygame.draw.rect(screen, (162, 162, 152), pygame.Rect(20+sqx*58, 124+sqy*58, 56, 56))
-        pygame.draw.rect(screen, (192, 192, 182), pygame.Rect(20+sqx*58, 124+sqy*58, 54, 54))
+        pygame.draw.rect(screen, COVEREDSQCOLOUR, pygame.Rect(20+sqx*58, 124+sqy*58, 54, 54))
         pygame.draw.rect(screen, C3, pygame.Rect(20+10+sqx*58, 124+15+sqy*58, 6, 6))
         pygame.draw.rect(screen, C3, pygame.Rect(20+16+sqx*58, 124+12+sqy*58, 12, 12))
         pygame.draw.rect(screen, C3, pygame.Rect(20+22+sqx*58, 124+8+sqy*58, 12, 22))
@@ -377,6 +376,7 @@ pygame.display.set_caption('Minesweeper')
 #Colours
 BACKGROUND = (202, 202, 196)
 BOARD = (232, 232, 222)
+COVEREDSQCOLOUR = (202, 202, 192)
 SQUARECOLOUR = (212, 212, 202)
 GREY = (132, 132, 128)
 BLACK = (26, 36, 46)
@@ -450,10 +450,10 @@ while True:
                     for cy in range(30):
                         if click_map[cx][cy] == 0:
                             pygame.draw.rect(screen, (162, 162, 152), pygame.Rect(20+cy*58, 124+cx*58, 56, 56))
-                            pygame.draw.rect(screen, (192, 192, 182), pygame.Rect(20+cy*58, 124+cx*58, 54, 54))
+                            pygame.draw.rect(screen, COVEREDSQCOLOUR, pygame.Rect(20+cy*58, 124+cx*58, 54, 54))
 
         #Clicking Smiley
-        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and event.button != 3 and 832 <= pygame.mouse.get_pos()[0] <= 920 and 10 <= pygame.mouse.get_pos()[1] <= 98:
+        if event.type == pygame.MOUSEBUTTONDOWN and event.button == 1 and event.button != 3 and 842 <= pygame.mouse.get_pos()[0] <= 930 and 10 <= pygame.mouse.get_pos()[1] <= 98:
         
             #Reset
             game_won = False
@@ -555,7 +555,7 @@ while True:
                         #Remove flag when already flagged
                         elif click_map[sqx][sqy] == 2:
                             pygame.draw.rect(screen, (152, 152, 146), pygame.Rect(20+sqy*58, 124+sqx*58, 56, 56))
-                            pygame.draw.rect(screen, (192, 192, 182), pygame.Rect(20+sqy*58, 124+sqx*58, 54, 54))
+                            pygame.draw.rect(screen, COVEREDSQCOLOUR, pygame.Rect(20+sqy*58, 124+sqx*58, 54, 54))
                             click_map[sqx][sqy] = 0
                             mines_num += 1      
                             flagged_sq.remove([sqx, sqy]) 
