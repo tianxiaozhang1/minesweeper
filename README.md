@@ -10,12 +10,12 @@ Only the "Expert" difficulty is implemented for simplicity.
 
 Gameplay looks like this:
 
-![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper1.gif)
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper1a.gif)
 
-![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper2.gif)
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper2a.gif)
 
-![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper3.gif)
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper3a.gif)
 
-![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper4.gif)
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper4a.gif)
 
 Thanks for visiting.
