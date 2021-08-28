@@ -8,7 +8,7 @@ The rules of this particular version is similar to the Windows version; one mino
 
 Only the "Expert" difficulty is implemented for simplicity.
 
-Gameplay looks like this:
+## Gameplay
 
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper1a.gif)
 
