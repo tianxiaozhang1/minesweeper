@@ -461,6 +461,8 @@ while True:
             game_on = False
             time_elapsed = 0
             mines_num = 99
+            #mines_num = 399
+
             bigred_number(0, 10, 1626)
             draw_new_board()
             mines = new_board(mines)
@@ -510,20 +512,47 @@ while True:
                                     game_on = False
                         #Clicked mine
                         else:
-                            for ir2 in range(16):
-                                for ic2 in range(30):
-                                    #Show all mines
-                                    if numbers[ir2][ic2] == 9:
-                                        drawing_number("M", ic2, ir2)
-                                    #Wrongly flagged
-                                    if click_map[ir2][ic2] == 2 and numbers[ir2][ic2] != 9:
-                                        drawing_number("X", ic2, ir2)
 
-                            #Exploded
-                            drawing_number("E", sqy, sqx)
-                            #Game over
-                            game_failed = True
-                            game_on = False
+                            #Clicked mine on new game => Automatically setup a new game to avoid this
+                            ########
+                            if sum([sum(i) for i in zip(*click_map)]) == 0:
+                                #print("Condition")
+
+                                bigred_number(0, 10, 1626)
+
+                                game_won, game_failed, game_on = False, False, True
+                                time_elapsed = 0
+                                mines_num = 99
+
+                                draw_new_board()
+                                mines = new_board(mines)
+                                numbers = determine_numbers(mines, numbers)
+                                reset_clickmap()
+                                flagged_sq = []
+
+                                if numbers[sqx][sqy] == 0:
+                                    show_squares(sqx, sqy)
+                                else:
+                                    drawing_number(numbers[sqx][sqy], sqy, sqx)
+                                    click_map[sqx][sqy] = 1
+                            ########
+
+                            else:
+                                for ir2 in range(16):
+                                    for ic2 in range(30):
+                                        #Show all mines
+                                        if numbers[ir2][ic2] == 9:
+                                            if click_map[ir2][ic2] == 0: ### Added so that when hit a mine the correctly flagged ones don't change
+                                                drawing_number("M", ic2, ir2)
+                                        #Wrongly flagged
+                                        if click_map[ir2][ic2] == 2 and numbers[ir2][ic2] != 9:
+                                            drawing_number("X", ic2, ir2)
+
+                                #Exploded
+                                drawing_number("E", sqy, sqx)
+                                #Game over
+                                game_failed = True
+                                game_on = False
 
                 #Right click
                 if event.button == 3:
@@ -568,9 +597,11 @@ while True:
         #For testing - could be a cheat
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
-                print("numbers")
+                #print("numbers")
                 for x2 in numbers:
                     print(x2)
+                print(" ")
+                print(click_map)
 
     bigred_number(mines_num, 10, 10)
 
