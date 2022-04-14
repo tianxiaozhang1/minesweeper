@@ -26,4 +26,9 @@ https://www.pygame.org/wiki/GettingStarted
 
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper4a.gif)
 
+## Added feature
+
+If the first clicked square is a mine, the game will automatically reset to be more playable.
+
+
 Thanks for visiting.
