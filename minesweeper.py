@@ -516,25 +516,27 @@ while True:
                             #Clicked mine on new game => Automatically setup a new game to avoid this
                             ########
                             if sum([sum(i) for i in zip(*click_map)]) == 0:
+
+                                while numbers[sqx][sqy] == 9:
                                 #print("Condition")
 
-                                bigred_number(0, 10, 1626)
+                                    bigred_number(0, 10, 1626)
 
-                                game_won, game_failed, game_on = False, False, True
-                                time_elapsed = 0
-                                mines_num = 99
+                                    game_won, game_failed, game_on = False, False, True
+                                    time_elapsed = 0
+                                    mines_num = 99
 
-                                draw_new_board()
-                                mines = new_board(mines)
-                                numbers = determine_numbers(mines, numbers)
-                                reset_clickmap()
-                                flagged_sq = []
+                                    draw_new_board()
+                                    mines = new_board(mines)
+                                    numbers = determine_numbers(mines, numbers)
+                                    reset_clickmap()
+                                    flagged_sq = []
 
-                                if numbers[sqx][sqy] == 0:
-                                    show_squares(sqx, sqy)
-                                else:
-                                    drawing_number(numbers[sqx][sqy], sqy, sqx)
-                                    click_map[sqx][sqy] = 1
+                                    if numbers[sqx][sqy] == 0:
+                                        show_squares(sqx, sqy)
+                                    else:
+                                        drawing_number(numbers[sqx][sqy], sqy, sqx)
+                                        click_map[sqx][sqy] = 1
                             ########
 
                             else:
