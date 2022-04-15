@@ -517,8 +517,8 @@ while True:
                             ########
                             if sum([sum(i) for i in zip(*click_map)]) == 0:
 
+                                #While the first click of the game is a mine -- keeps resetting
                                 while numbers[sqx][sqy] == 9:
-                                #print("Condition")
 
                                     bigred_number(0, 10, 1626)
 
@@ -603,7 +603,8 @@ while True:
                 for x2 in numbers:
                     print(x2)
                 print(" ")
-                print(click_map)
+                for x3 in click_map:
+                    print(x3)
 
     bigred_number(mines_num, 10, 10)
 
