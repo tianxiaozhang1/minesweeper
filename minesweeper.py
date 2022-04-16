@@ -90,13 +90,8 @@ def draw_new_board():
         pygame.draw.rect(screen, COVEREDSQCOLOUR, pygame.Rect(20+column_i*58, 124+row_i*58, 54, 54))
 
 def new_board(mines): 
-    mines = []
 
-    while len(mines) < 16:
-        mines.append([])
-    for row1 in mines:
-        while len(row1) < 30:
-            row1.append(0)
+    mines = [[0] * 30 for _ in range(16)]
 
     #Ensure the right number of mines
     while sum([sum(i) for i in zip(*mines)]) != mines_num:
@@ -110,12 +105,7 @@ def new_board(mines):
 def determine_numbers(mines, numbers):
     #Calculate the 1-8 numbers
 
-    numbers = []
-    while len(numbers) < 16:
-        numbers.append([])
-    for row2 in numbers:
-        while len(row2) < 30:
-            row2.append(0)
+    numbers = [[0] * 30 for _ in range(16)]
 
     for ir2 in range(16):
         for ic2 in range(30):
