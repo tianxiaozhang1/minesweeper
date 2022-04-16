@@ -417,12 +417,8 @@ draw_new_board()
 mines = new_board(mines)
 numbers = determine_numbers(mines, numbers)
 
-click_map = []
-while len(click_map) < 16:
-    click_map.append([])
-for rowc in click_map:
-    while len(rowc) < 30:
-        rowc.append(0)
+click_map = [[0] * 30 for _ in range(16)]
+
 mouse_down = False
 
 while True:
@@ -459,7 +455,6 @@ while True:
             numbers = determine_numbers(mines, numbers)
             reset_clickmap()
             flagged_sq = []
-            #opened_sq = 0
 
         #Clicking any square
         if event.type == pygame.MOUSEBUTTONDOWN and 20 <= pygame.mouse.get_pos()[0] <= 1758 and 124 <= pygame.mouse.get_pos()[1] <= 1050:
