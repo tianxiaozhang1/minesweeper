@@ -8,6 +8,8 @@ The rules of this particular version is similar to the Windows version; one mino
 
 Only the "Expert" difficulty is implemented for simplicity.
 
+In the updated version a self-solving feature is added.
+
 ## Requirements
 
 ### Python 3
@@ -15,6 +17,12 @@ https://www.python.org/downloads
 
 ### Pygame
 https://www.pygame.org/wiki/GettingStarted
+
+## [New] Auto-Solving
+
+Tired of all the clicking? The game can solve itself. Using the same info and logic as a human (but very very lucky when a guess is necessary).
+
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/auto_solve.gif)
 
 ## Gameplay
 
@@ -25,5 +33,13 @@ https://www.pygame.org/wiki/GettingStarted
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper3a.gif)
 
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper4a.gif)
+
+## Solving Techniques/Patterns
+
+https://minesweeper.online/help/patterns
+
+## Further Reading
+
+https://dash.harvard.edu/bitstream/handle/1/14398552/BECERRA-SENIORTHESIS-2015.pdf
 
 Thanks for visiting.
