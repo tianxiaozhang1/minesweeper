@@ -634,21 +634,21 @@ def mid_click(sqx, sqy):
                     pygame.display.update()
 
 def display_sequence(full_sequence, mines_num):
-    
+    #Animation for the auto-solving solution
     current_time = 0
     while len(full_sequence) > 0:
 
-        clock_speed = 300
+        clock_speed = 300                                                                       #300 total time for ~8 seconds, typical full solution has 200-250 steps
         clock.tick(clock_speed)
         current_time += 1
 
         if current_time%10 == 0:
             latest_entry = full_sequence.pop(0)
-            if latest_entry[0] == 1:
+            if latest_entry[0] == 1:                                                            #Opening up squares
                 for pt1 in latest_entry[1:]:
                     drawing_number(numbers[pt1[0]][pt1[1]], pt1[1], pt1[0], True)
                     pygame.display.update()
-            else:
+            else:                                                                               #Flag mines
                 for pt1 in latest_entry[1:]:
                     drawing_number("F", pt1[1], pt1[0], True)
                     mines_num -= 1
@@ -713,8 +713,8 @@ ROBOT_EYE_ON = (68, 72, 92)
 YELLOW = (236, 212, 82)
 DARK_YELLOW = (218, 156, 52)
 
-# C1 LIGHT
-C1 = [(50, 112, 172), (80, 146, 150)]
+#Colours for numbers on board - first column is classic colours, second set is auto-solving colours with a blue theme
+C1 = [(50, 112, 172), (80, 146, 150)]           
 C2 = [(76, 128, 68), (36, 108, 106)]
 C3 = [(200, 22, 28), (16, 102, 152)]
 C4 = [(0, 62, 116), (18, 80, 122)]
@@ -768,25 +768,34 @@ click_map = [[0] * 30 for _ in range(16)]
 mouse_down = False
 
 while True:
+
+    #Auto-solving process
     if auto_solve:
         if game_won == False and game_failed == False:
+
+            #If game hasn't started, start a game
             if game_on == False:
                 game_on = True
+
+                #Possible is a list of squares with hidden neighbours so that they potentially can lead to a 100% certain deduction
+                #Full sequence is a record of every move - the internal logic is done but the physical move is logged for animation
                 possible, full_sequence = [], []
                 open_results = show_squares(start_pos[0], start_pos[1], possible, full_sequence, True)
                 possible, full_sequence = open_results[0], open_results[1]
                 possible = sort_list(possible, start_pos)
             else:
                 if auto_mines > 0:
+
+                    #Flag immediately obvious mines 
                     for asq in possible:
                         check_result = open_check(asq)
                         neighbour_num, open_list, hidden_list, flagged_list = check_result[0], check_result[1], check_result[2], check_result[3]
-
                         if len(hidden_list)+len(flagged_list) == numbers[asq[0]][asq[1]] and hidden_list:
                             mines_num, auto_mines = auto_flag(mines_num, hidden_list, auto_mines, auto = False)
                             full_sequence.append([2]+hidden_list)
                             possible.remove(asq)
-
+                    
+                    #Open immediately obvious squares
                     for asq in possible:
                         check_result = open_check(asq)
                         neighbour_num, open_list, hidden_list, flagged_list = check_result[0], check_result[1], check_result[2], check_result[3]
@@ -800,19 +809,21 @@ while True:
                                     if len(adding_results[2]) + len(adding_results[0]) < 8:
                                         possible.append(new_sq)
 
+                    #Updating the possible list
                     for repair in possible:
                         repair_update = square_breakdown(repair[0], repair[1])
                         if len(repair_update[1]) == 0:
                             possible.remove(repair)
 
+                    #If a square has open and hidden neighbours, see if there's a known pattern for further deduction
                     for asq in possible:
                         results = square_breakdown(asq[0], asq[1])
                         open, hidden, flagged = results[0], results[1], results[2]
                         if open and hidden:
                             mines_num, possible, full_sequence, auto_mines = pattern_detection(asq, mines_num, open, hidden, flagged, possible, full_sequence, auto_mines)
 
+                    #If all the above can't move things further, make a very lucky guess
                     unopened_nums = []
-
                     for ix in range(16):
                         for iy in range(30):
                             if click_map[ix][iy] == 0:
@@ -820,7 +831,6 @@ while True:
                                     unopened_nums.append([ix, iy])
                                     if len(unopened_nums) >= 50:
                                         break
-
                     if unopened_nums != []:
                         to_open = unopened_nums[-1]
 
@@ -831,7 +841,8 @@ while True:
                         if len(adding_results[0]) > 0 and len(adding_results[1]) > 0 and numbers[to_open[0]][to_open[1]] != 0:
                             if len(adding_results[2]) + len(adding_results[0]) < 8:
                                 possible.append(to_open)
-                    
+                
+                #No more unflagged mines - game is actually over, animate all the moves and declare victory
                 else:
                     mines_num = display_sequence(full_sequence, mines_num) 
                     game_won = True
