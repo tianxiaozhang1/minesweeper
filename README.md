@@ -8,7 +8,7 @@ The rules of this particular version is similar to the Windows version; one mino
 
 Only the "Expert" difficulty is implemented for simplicity.
 
-In the updated version a self-solving feature is added.
+In the updated version a self-solving feature is added. The inital click will not only avoid a mine, but will always open up a small area for a smooth experience. This can be implemented for the human player as well.
 
 ## Requirements
 
