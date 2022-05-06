@@ -24,6 +24,8 @@ Tired of all the clicking? The game can solve itself. Using the same info and lo
 
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/auto_solve.gif)
 
+![](https://github.com/tianxiaozhang1/minesweeper/blob/main/auto_solve_2.gif)
+
 ## Gameplay
 
 ![](https://github.com/tianxiaozhang1/minesweeper/blob/main/minesweeper1a.gif)
