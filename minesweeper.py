@@ -431,6 +431,7 @@ while True:
             click_pair = []
 
             #Redraw all unopened & unflagged squares
+            #"Back to normal" after a failed mid-click; removing all the darkened squares
             if game_on == True:
                 for cx in range(16):
                     for cy in range(30):
@@ -447,7 +448,6 @@ while True:
             game_on = False
             time_elapsed = 0
             mines_num = 99
-            #mines_num = 399
 
             bigred_number(0, 10, 1626)
             draw_new_board()
@@ -497,7 +497,6 @@ while True:
                                     game_on = False
                         #Clicked mine
                         else:
-
                             #Clicked mine on new game => Automatically setup a new game to avoid this
                             ########
                             if sum([sum(i) for i in zip(*click_map)]) == 0:
@@ -555,7 +554,7 @@ while True:
                                 drawing_number("F", sqy, sqx)
                                 click_map[sqx][sqy] = 2
                                 flagged_sq.append([sqx, sqy])
-                                #print("flagged_sq","#", len(flagged_sq) ,"#",flagged_sq)
+                                
                                 mines_num -= 1
                                 #Possibly flagged all mines
                                 if mines_num == 0:
