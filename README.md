@@ -44,7 +44,7 @@ https://minesweeper.online/help/patterns
 
 ## JavaScript
 
-The same program written in JavaScript is here:
+The same program (classic version) written in JavaScript is here:
 
 https://github.com/tianxiaozhang1/minesweeper_js
 
