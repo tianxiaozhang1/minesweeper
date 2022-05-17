@@ -42,7 +42,7 @@ Tired of all the clicking? The game can solve itself. Using the same info and lo
 
 https://minesweeper.online/help/patterns
 
-## JavaScript
+## JavaScript Version
 
 The same program (classic version) written in JavaScript is here:
 
