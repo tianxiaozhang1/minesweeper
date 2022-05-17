@@ -1,3 +1,8 @@
+# The rules of this particular version is similar to the Windows version
+# One minor difference being only flagging/sweeping all mines (and not necessarily opening any other squares) will win the game as well
+# One added function is to guarantee a successful initial click so the game won't be over before it begins
+# (game will replace the map if a mine is hit upon first click).
+
 import pygame, sys, random
 
 def smiley_hover():
