@@ -42,6 +42,12 @@ Tired of all the clicking? The game can solve itself. Using the same info and lo
 
 https://minesweeper.online/help/patterns
 
+## JavaScript
+
+The same program written in JavaScript is here:
+
+https://github.com/tianxiaozhang1/minesweeper_js
+
 ## Further Reading
 
 https://dash.harvard.edu/bitstream/handle/1/14398552/BECERRA-SENIORTHESIS-2015.pdf
